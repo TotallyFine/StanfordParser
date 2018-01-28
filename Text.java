@@ -80,7 +80,7 @@ public class Text {
 					Tree l1 = wordNodes.get(td.dep().value());
 					Tree l2 = wordNodes.get(td.gov().value());
 					// 计算每个关系的重要性
-					// 如果是case这样的介词关系,对于其中的介词则不增加其重要性，如果是介词关系中的非介词那么就增加
+					// 如果是case这样的介词关系,都不增加重要性，只是总的关系的重要性增加
 					// 在介词关系中介词处于被支配的地位，是dep
 					if (!td.reln().toString().equals("case")) {
 						weight = calculate(l1, l2, parse, words, rootlist);
