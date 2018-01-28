@@ -25,8 +25,6 @@ public class MyDemo {
 		String filename = "D:/text.txt";
 		// 加载parser
 		LexicalizedParser lp = LexicalizedParser.loadModel(parserModel);
-
-		List<Word> words = new ArrayList<Word>();
 		
 		// 根据parser来得到相应语法树的语法包
 		TreebankLanguagePack tlp = lp.treebankLanguagePack();
@@ -54,8 +52,7 @@ public class MyDemo {
 				// 从语法结构中获得依存关系，每个依存关系的类型是edu.stanford.nlp.trees.TypedDependency
 				// 返回一个Collection包含这个语法结构中所有的依存关系
 				Collection tdl = gs.typedDependenciesCCprocessed();
-				int id = 0;
-				// 遍历所有的依存关系，构建类Word的集合words
+				
 				for(Iterator it = tdl.iterator();it.hasNext();){
 					System.out.println(it.next());
 					// 得到这个依存关系
